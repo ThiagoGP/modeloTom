@@ -142,12 +142,9 @@ while cap.isOpened():
     mp_image = mp.Image(image_format=mp.ImageFormat.SRGB, data=image)
     gesture_recognizer.recognize_async(mp_image, timestamp_ms=cv2.getTickCount())
 
-    cv2.putText(image, f'Gesto: {ultimo_gesto}', (10, 30),
-                cv2.FONT_HERSHEY_SIMPLEX, 1, (0, 255, 0), 2)
 
-    cv2.imshow('Reconhecimento de Gestos', image)
     if cv2.waitKey(5) & 0xFF == 27:
         break
 
 cap.release()
-cv2.destroyAllWindows()
+#cv2.destroyAllWindows()
